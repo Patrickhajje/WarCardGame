@@ -36,7 +36,7 @@ public:
 	void SetSuit(std::string suit) { _suit = suit; }
 
 	std::string GetFace() const { return _face; }
-	void SetFace(std::string face) { _face = face; }
+	void SetFace(std::string& face) { _face = face; }
 
 	void print();
 	int compare(Card& otherCard);

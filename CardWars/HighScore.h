@@ -14,7 +14,7 @@ public:
 	{
 		return mName;
 	}
-	void name(std::string newName)
+	void name(const std::string &newName)
 	{
 		mName = newName;
 	}
@@ -31,8 +31,8 @@ public:
 
 		file << mName << delim << mScore;
 	}
-	static std::vector<HighScore> LoadHighScores(std::string filePath);
+	static std::vector<HighScore> LoadHighScores(std::string& filePath);
 	static void ShowHighScores(std::vector<HighScore>& highScore);
-	static void SaveHighScores(std::string filePath, std::vector<HighScore>& highScore);
+	static void SaveHighScores(std::string& filePath, std::vector<HighScore>& highScore);
 };
 

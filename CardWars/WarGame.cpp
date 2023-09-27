@@ -17,7 +17,7 @@ WarGame::WarGame()
 /// It Stores each card in the mCards vector field of the class.
 /// </summary>
 /// <param name="filePath"></param>
-void WarGame::LoadCards(std::string filePath)
+void WarGame::LoadCards(std::string& filePath)
 {
     std::vector<std::string>faces;
     std::vector<std::string>suites;
@@ -40,9 +40,9 @@ void WarGame::LoadCards(std::string filePath)
     {
         faces.push_back(placeHolder);
     }
-    for (auto suit : suites) 
+    for (auto& suit : suites) 
     {
-        for (auto face : faces)
+        for (auto& face : faces)
         {
             Card card(suit, face);
             mCards.push_back(card);
@@ -54,7 +54,7 @@ void WarGame::LoadCards(std::string filePath)
 /// </summary>
 void WarGame::ShowCards()
 {
-    for(auto card : mCards)
+    for(auto& card : mCards)
     {
         card.print();
         std::cout << std::endl;
@@ -67,7 +67,7 @@ void WarGame::ShowCards()
 /// <param name="highscoreFile"></param>
 /// <param name="highscores"></param>
 /// /// </summary>
-void WarGame::PlayGame(std::string highscoreFile, std::vector<HighScore>& highscores)
+void WarGame::PlayGame(std::string& highscoreFile, std::vector<HighScore>& highscores)
 {
     
 /// Starts by calling shuffle passing in the vector of cards.
@@ -144,7 +144,7 @@ void WarGame::PlayGame(std::string highscoreFile, std::vector<HighScore>& highsc
     {
         std::cout << "\nPLAYER WINS! " << playerCount << " to " << npcCount << "\n";
     }
-    if (playerCount > highscores.back().score())
+    if (playerCount > highscores.back().score() && playerCount > npcCount)
     {
         std::string name;
        name = Input::GetString("\nNEW HIGH SCORE! What is your name? ");

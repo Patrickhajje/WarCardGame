@@ -11,7 +11,7 @@
 /// </summary>
 /// <param name="filePath"></param>
 /// <returns></returns>
-std::vector<HighScore> HighScore::LoadHighScores(std::string filePath)
+std::vector<HighScore> HighScore::LoadHighScores(std::string& filePath)
 {
     std::vector<HighScore>highscores;
     std::ifstream inputFile(filePath);
@@ -58,7 +58,7 @@ void HighScore::ShowHighScores(std::vector<HighScore>& highScores)
 /// </summary>
 /// <param name="filePath"></param>
 /// <param name="highScore"></param>
-void HighScore::SaveHighScores(std::string filePath, std::vector<HighScore>& highScore)
+void HighScore::SaveHighScores(std::string& filePath, std::vector<HighScore>& highScore)
 {
     char delim = ',';
     bool isFirst = true;

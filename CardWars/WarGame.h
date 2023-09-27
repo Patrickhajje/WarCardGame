@@ -16,9 +16,9 @@ private:
 
 public:
 	WarGame(); 
-	static void LoadCards(std::string filePath);
+	static void LoadCards(std::string& filePath);
 
 	static void ShowCards();
-	void PlayGame(std::string highscoreFile, std::vector<HighScore>& highscores);
+	void PlayGame(std::string& highscoreFile, std::vector<HighScore>& highscores);
 };
 
